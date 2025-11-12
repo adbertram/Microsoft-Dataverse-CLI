@@ -1,5 +1,9 @@
 # Dataverse CLI
 
+[![GitHub](https://img.shields.io/badge/GitHub-Microsoft--Dataverse--CLI-blue?logo=github)](https://github.com/adbertram/Microsoft-Dataverse-CLI)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A powerful Python CLI and library for Microsoft Dataverse and Power Automate. Manage flows, solutions, entities, and more from the command line or in your Python applications.
 
 ## Features
@@ -14,10 +18,14 @@ A powerful Python CLI and library for Microsoft Dataverse and Power Automate. Ma
 
 ## Installation
 
-### Using pipx (Recommended)
+### From GitHub (Recommended)
 
 ```bash
-cd ~/Dropbox/GitRepos/Microsoft-Dataverse-CLI
+# Clone the repository
+git clone https://github.com/adbertram/Microsoft-Dataverse-CLI.git
+cd Microsoft-Dataverse-CLI
+
+# Install globally with pipx
 pipx install -e .
 ```
 
@@ -27,6 +35,15 @@ If pipx is not installed:
 ```bash
 brew install pipx
 pipx ensurepath
+```
+
+### From Local Directory
+
+If you already have the repository cloned:
+
+```bash
+cd ~/Dropbox/GitRepos/Microsoft-Dataverse-CLI
+pipx install -e .
 ```
 
 ### From Source (Development with venv)
