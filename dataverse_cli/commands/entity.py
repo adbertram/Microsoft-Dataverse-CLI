@@ -150,3 +150,41 @@ def get_entity_metadata(
     except Exception as e:
         exit_code = handle_api_error(e)
         raise typer.Exit(exit_code)
+
+
+@app.command("delete")
+def delete_record(
+    entity_name: str = typer.Argument(..., help="Entity logical name (e.g., connectors, workflows)"),
+    record_id: str = typer.Argument(..., help="Record ID (GUID)"),
+    yes: bool = typer.Option(False, "--yes", "-y", help="Skip confirmation prompt"),
+):
+    """
+    Delete a specific record by ID.
+
+    Examples:
+        dataverse entity delete connectors 56c1700d-a317-4472-8bd6-928afa5be754
+        dataverse entity delete workflows 29e2253b-cabc-f011-bbd3-000d3a8ba54e --yes
+    """
+    try:
+        if not yes:
+            confirm = typer.confirm(
+                f"Are you sure you want to delete {entity_name} record {record_id}?",
+                abort=True
+            )
+
+        client = get_client()
+        client.delete(f"{entity_name}({record_id})")
+
+        print_json({
+            "status": "success",
+            "message": f"Successfully deleted {entity_name} record",
+            "entity": entity_name,
+            "record_id": record_id
+        })
+
+    except typer.Abort:
+        typer.echo("Deletion cancelled")
+        raise typer.Exit(0)
+    except Exception as e:
+        exit_code = handle_api_error(e)
+        raise typer.Exit(exit_code)
