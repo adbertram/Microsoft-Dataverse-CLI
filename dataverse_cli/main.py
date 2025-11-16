@@ -8,7 +8,7 @@ from .client import ClientError
 # Create main Typer app
 app = typer.Typer(
     name="dataverse",
-    help="CLI interface for Microsoft Dataverse and Power Automate - Manage flows, solutions, entities, and more",
+    help="CLI interface for Microsoft Dataverse - Manage workflows, solutions, entities, and more",
     no_args_is_help=True,
     add_completion=True,
 )
@@ -17,7 +17,7 @@ app = typer.Typer(
 # Import and register command modules
 try:
     from .commands import flow, solution, auth, entity
-    app.add_typer(flow.app, name="flow", help="Manage Power Automate flows")
+    app.add_typer(flow.app, name="flow", help="Manage Dataverse workflows")
     app.add_typer(solution.app, name="solution", help="Manage Dataverse solutions")
     app.add_typer(auth.app, name="auth", help="Authentication and token utilities")
     app.add_typer(entity.app, name="entity", help="Query Dataverse entities/tables")
@@ -38,7 +38,7 @@ def callback(
     ),
 ):
     """
-    Dataverse CLI - Automate and manage Microsoft Dataverse and Power Automate from the command line.
+    Dataverse CLI - Automate and manage Microsoft Dataverse from the command line.
 
     Authentication is handled via environment variables:
 

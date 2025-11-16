@@ -1,4 +1,4 @@
-"""Power Automate flow commands for Dataverse CLI."""
+"""Dataverse workflow commands for Dataverse CLI."""
 import json
 import typer
 from typing import Optional
@@ -14,7 +14,7 @@ from ..output import (
     format_response,
 )
 
-app = typer.Typer(help="Manage Power Automate flows")
+app = typer.Typer(help="Manage Dataverse workflows")
 
 
 @app.command("list")
@@ -24,7 +24,7 @@ def list_flows(
     table_format: bool = typer.Option(False, "--table", "-t", help="Display as table"),
 ):
     """
-    List all Power Automate flows.
+    List all Dataverse workflows.
 
     Examples:
         dataverse flow list
@@ -105,7 +105,7 @@ def create_flow(
     description: Optional[str] = typer.Option(None, "--description", "-d", help="Flow description"),
 ):
     """
-    Create a new Power Automate flow.
+    Create a new Dataverse workflow.
 
     Examples:
         dataverse flow create --name "My Flow" --trigger http
@@ -216,7 +216,7 @@ def update_flow(
     state: Optional[str] = typer.Option(None, "--state", help="State: draft, activated"),
 ):
     """
-    Update an existing Power Automate flow.
+    Update an existing Dataverse workflow.
 
     Examples:
         dataverse flow update <flow-id> --name "New Name"
@@ -252,7 +252,7 @@ def delete_flow(
     confirm: bool = typer.Option(False, "--yes", "-y", help="Skip confirmation prompt"),
 ):
     """
-    Delete a Power Automate flow.
+    Delete a Dataverse workflow.
 
     Examples:
         dataverse flow delete <flow-id>
@@ -279,7 +279,7 @@ def activate_flow(
     flow_id: str = typer.Argument(..., help="Flow ID (GUID)"),
 ):
     """
-    Activate (turn on) a Power Automate flow.
+    Activate (turn on) a Dataverse workflow.
 
     Examples:
         dataverse flow activate <flow-id>
@@ -299,7 +299,7 @@ def deactivate_flow(
     flow_id: str = typer.Argument(..., help="Flow ID (GUID)"),
 ):
     """
-    Deactivate (turn off) a Power Automate flow.
+    Deactivate (turn off) a Dataverse workflow.
 
     Examples:
         dataverse flow deactivate <flow-id>

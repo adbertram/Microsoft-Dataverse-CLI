@@ -4,11 +4,11 @@
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A powerful Python CLI and library for Microsoft Dataverse and Power Automate. Manage flows, solutions, entities, and more from the command line or in your Python applications.
+A powerful Python CLI and library for Microsoft Dataverse. Manage workflows, solutions, entities, and more from the command line or in your Python applications.
 
 ## Features
 
-- ✅ **Power Automate Flow Management** - Create, list, update, delete, and manage flows
+- ✅ **Dataverse Workflow Management** - Create, list, update, delete, and manage Dataverse workflows
 - ✅ **Solution Operations** - Query solutions and their components
 - ✅ **Entity/Table Queries** - Query any Dataverse entity with OData filters
 - ✅ **Multiple Authentication Methods** - Service principal, user credentials, or access token
@@ -106,10 +106,10 @@ dataverse auth test
 dataverse auth whoami
 ```
 
-### List Power Automate Flows
+### List Dataverse Workflows
 
 ```bash
-# List all flows
+# List all workflows
 dataverse flow list
 
 # List flows in table format
@@ -187,13 +187,13 @@ dataverse entity metadata workflow
 
 | Command | Description |
 |---------|-------------|
-| `flow list` | List all Power Automate flows |
-| `flow get <id>` | Get flow details |
-| `flow create` | Create a new flow |
-| `flow update <id>` | Update flow properties |
-| `flow delete <id>` | Delete a flow |
-| `flow activate <id>` | Turn on a flow |
-| `flow deactivate <id>` | Turn off a flow |
+| `flow list` | List all Dataverse workflows |
+| `flow get <id>` | Get workflow details |
+| `flow create` | Create a new workflow |
+| `flow update <id>` | Update workflow properties |
+| `flow delete <id>` | Delete a workflow |
+| `flow activate <id>` | Turn on a workflow |
+| `flow deactivate <id>` | Turn off a workflow |
 
 ### Solution Commands
 
@@ -324,7 +324,7 @@ MIT License - see LICENSE file for details.
 ## Resources
 
 - [Dataverse Web API Documentation](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview)
-- [Power Automate Documentation](https://learn.microsoft.com/en-us/power-automate/)
+- [Workflow Entity Reference](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/reference/entities/workflow)
 - [MSAL Python Documentation](https://msal-python.readthedocs.io/)
 - [Typer Documentation](https://typer.tiangolo.com/)
 
